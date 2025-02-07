@@ -1,0 +1,33 @@
+<html>
+<head>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+</head>
+<body>
+    <p style="text-align: center;">
+        THE POWER RULE
+    \[\frac{d}{dx}(x)^n\]
+        After applying the definition of the derivative, we get the equation:
+    \[\lim_{h\to0}\frac{(x+h)^n-x^n}{h} = \frac{d}{dx}(x)^n\]
+        From this, we can apply the binomial theorem to the LHS, giving us:
+    \[\lim_{h\to0}\frac{\sum_{k=0}^n\binom{n}{k}x^{n-k}h^k-x^n}{h} = \frac{d}{dx}(x)^n\]
+        In order to make our numerator one term, we can pull out the first term of the series \(x^n\)
+    \[\lim_{h\to0}\frac{x^n+\sum_{k=1}^n\binom{n}{k}x^{n-k}h^k-x^n}{h} = \frac{d}{dx}(x)^n\]
+        This cancels with the \(-x^n\) term, giving us the following
+    \[\lim_{h\to0}\frac{\sum_{k=1}^n\binom{n}{k}x^{n-k}h^k}{h} = \frac{d}{dx}(x)^n\]
+        The next step from here is to factor out a h from our series (remember \(a^b=a^{b-1}a\))
+    \[\lim_{h\to0}\frac{h\sum_{k=1}^n\binom{n}{k}x^{n-k}h^{h-1}-x^n}{h} = \frac{d}{dx}(x)^n\]
+        After cancellation of the h in both numerator and denominator,
+    \[\lim_{h\to0}\sum_{k=1}^n\binom{n}{k}x^{n-k}h^{h-1} = \frac{d}{dx}(x)^n\]
+        Now, take note of the next terms of the series,
+    \[\sum_{k=1}^n\binom{n}{k}x^{n-k}h^{h-1} = \binom{n}{1}x^{n-1}h^{1-1} + \binom{n}{2}x^{n-2}h^{2-1} + \dots \binom{n}{n}x^{n-n}h^{n-1}\]
+        Notice that for every term following that including \(x^{n-1}\), there is \(h\) raised to a power greater than or equal to one, but in the term including \(x^{n-1}\) \(h\) is to the 0 power.
+        This means that when evaluated as \(h\to0\) we are left with
+    \[\binom{n}{1}x^{n-1}+0 = \frac{d}{dx}x^n\]
+        Remembering \(\binom{n}{1} = n\)
+    \[nx^{n-1} = \frac{d}{dx}x^n\]
+</p>
+</body>
+
+</html>
